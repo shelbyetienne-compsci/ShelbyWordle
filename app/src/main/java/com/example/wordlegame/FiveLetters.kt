@@ -3,6 +3,7 @@ package com.example.wordlegame
 import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -81,7 +82,10 @@ class FiveLetters : Fragment() {
                 val params = TableRow.LayoutParams(buttonSize, buttonSize)
                 params.setMargins(8, 8, 8, 8)
                 buttons[i][j]!!.layoutParams = params
-                buttons[i][j]!!.textSize = (buttonSize * 0.35).toFloat()
+                buttons[i][j]!!.setTextSize(
+                    TypedValue.COMPLEX_UNIT_PX,
+                    buttonSize * 0.4f
+                )
                 buttons[i][j]!!.typeface = font
                 buttons[i][j]!!.isAllCaps = false
                 buttons[i][j]!!.setTextColor(resources.getColor(R.color.neon_blue))
